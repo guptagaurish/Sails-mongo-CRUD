@@ -9,7 +9,7 @@ module.exports = {
 
     create: function (req, res) {
         let data;
-          // to convert category name's first letter capital
+    
         data = { name: req.body.name.charAt(0).toUpperCase() + req.body.name.slice(1) }
         myemployeedb.create(data).fetch().exec(function (err, employee) {
           if (err) return (err);
@@ -27,7 +27,7 @@ module.exports = {
         let query;
         let data;
         query = { "id": req.param('id') }
-        // to convert category to first letter capital, rest of them are small letters
+        
         data = { name: req.body.name.charAt(0).toUpperCase() + req.body.name.slice(1) }
         myemployeedb.update(query,data).fetch().exec(function (err, employee) {
           employeeName = data.name;
